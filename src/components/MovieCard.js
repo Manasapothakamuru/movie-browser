@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import '../styles.css'
+import { useState } from 'react';
 
-export default function MovieCard({ movie }) {
-  const [showOverview, setShowOverview] = useState(false);
+export default function MovieCard ({ movie }) {
 
+  const genres = movie.genres ? movie.genres.split(',') : [];
+  const [showOverview, setShowOverview] = useState(false); 
   const toggleOverview = () => {
     setShowOverview(!showOverview);
   };
@@ -12,7 +15,11 @@ export default function MovieCard({ movie }) {
       <div className='movie--card'>
         <img src={movie.poster_path} className='movie--img' alt={movie.title} width={130} />
         <h1 className='movie--title'>Title: {movie.title}</h1>
-        <h2 className='movie--genre'>Genre: {movie.genres.map(genre => genre.name).join(', ')}</h2>
+        <div className="movie--genre">
+        {genres.map((genre, index) => (
+          <span key={index} className="genre">{genre.trim()}</span> 
+        ))}
+      </div>
         <h3 className='movie--rating'>Rating: {movie.vote_average}</h3>
         {showOverview && (
           <div className='movie--overview'>
@@ -25,4 +32,6 @@ export default function MovieCard({ movie }) {
       </div>
     </section>
   );
-}
+};
+
+

@@ -1,12 +1,11 @@
-/* General Styles */
 body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0; /* Light background color for better contrast */
+  background-color: #f0f0f0; 
 }
 
-/* Header Styles */
+
 .header {
   background-color: #007bff;
   color: white;
@@ -23,9 +22,9 @@ body, html {
   color: white;
   margin: 0;
   padding: 20px;
-  font-size: 24px; /* Slightly larger font size */
-  font-weight: bold; /* Bold text for the title */
-  text-transform: uppercase; /* Uppercase text for a formal look */
+  font-size: 24px; 
+  font-weight: bold; 
+  text-transform: uppercase; 
 }
 
 .movie--list {
